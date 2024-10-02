@@ -1,25 +1,42 @@
 #include<iostream>
+#include<Windows.h>
 #include<cstdlib>
-#include<time.h>
 using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "rus");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	srand(time(NULL));
 
-	/*int arr[20]{-5,10};*/
-	/*int i = [15] {-5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;};
-	srand(time(0));
-	for (int i = -5; i == 10; i++);
+	const int ii = 10;
+	int arr[ii];
+
+	for (int i = 0; i < ii; i++)
 	{
-		cout << rand() % -5 + 1;
-	}*/
-	for (int count = 1; count != 15; count++) {
-		int r = rand() % (10 - -5 + 1) - 5;
-		int arr[15] = { r,r,r,r,r,r,r,r,r,r,r,r,r,r,r};
-		cout << count << ")" << arr[count] << endl;
+		arr[i] = rand() % 10, 5;
 	}
 
+	for (int i = 0; i < ii; i++)
+	{
+		cout << arr[i] << " ";
+		if (i == 9)
+		{
+			cout << "\n";
+		}
 
+
+	}
+	const int pl = 10;
+	int arr[pl];;
+	cout << "Введите 10 чисел от 0 до 10: (Другие числа вводить нельзя)";
+	cin >> arr[pl];
+	
+	if (arr[pl] == arr[ii])
+	{
+		cout << "У вас совпали число(а)";
+	}
+
+	
 	return 0;
 }
